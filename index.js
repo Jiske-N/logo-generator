@@ -22,24 +22,27 @@ const main = async () => {
     // console.log(1, "b");
     console.log(chars, color, bgColor, structure);
     // const generateShape = new generateShape(chars, color, bgColor, structure);
-    switch (structure) {
-      case "Circle":
-        console.log(chars, color, bgColor);
-        const shape = new Circle();
-        console.log(shape);
-        break;
-      case "Square":
-        console.log(2);
-        break;
-      case "Triangle":
-        console.log(3);
-        break;
+    const shape = (chars, color, bgColor, structure) => {
+      switch (structure) {
+        case "Circle":
+          // console.log(chars, color, bgColor);
+          const newShape = new Circle(chars, color, bgColor);
+          console.log(newShape);
+          return newShape;
+        case "Square":
+          console.log(2);
+          break;
+        case "Triangle":
+          console.log(3);
+          break;
 
-      default:
-        break;
-    }
+        default:
+          break;
+      }
+    };
     // await generateShape().render();
-    // write to file
+    console.log("i hope the shape works");
+    shape.render();
     console.log("Generated logo.svg");
   } catch (error) {
     console.log(error);
