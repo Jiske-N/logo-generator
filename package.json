@@ -8,7 +8,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "npm index.js",
+    "start": "node index.js",
     "test": "jest"
   },
   "keywords": [],
