@@ -7,6 +7,6 @@
 
 <!-- text fill = text color -->
 <!-- text content = 3 lets -->
-  <text x="150" y="125" font-size="60" text-anchor="middle" fill="blue">MMM</text>
+  <text x="150" y="115" font-size="60" text-anchor="middle" fill="blue">MMM</text>
 
 </svg>
