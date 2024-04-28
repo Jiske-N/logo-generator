@@ -11,6 +11,8 @@ const { writeFile } = require("fs/promises");
 const getData = require("./lib/getData.js");
 // const generateShape = require("./lib/generateSVG.js");
 const Circle = require("./lib/circle.js");
+const Square = require("./lib/square.js");
+const Triangle = require("./lib/triangle.js");
 
 // class SVGLogos {
 //   constructor() {
@@ -39,16 +41,14 @@ const Circle = require("./lib/circle.js");
 const generateShape = (chars, color, bgColor, structure) => {
   switch (structure) {
     case "Circle":
-      console.log("all the things", chars, color, bgColor);
-      const newShape = new Circle(chars, color, bgColor);
-      // console.log("x", "y", "z", newShape);
-      return newShape;
+      const newCircle = new Circle(chars, color, bgColor);
+      return newCircle;
     case "Square":
-      console.log(2);
-      break;
+      const newSquare = new Square(chars, color, bgColor);
+      return newSquare;
     case "Triangle":
-      console.log(3);
-      break;
+      const newTriangle = new Triangle(chars, color, bgColor);
+      return newTriangle;
 
     default:
       break;
@@ -61,10 +61,10 @@ const main = async () => {
 
     // console.log("a", "b", chars, color, bgColor, structure);
     const shape = await generateShape(chars, color, bgColor, structure);
-    console.log("finally?", shape);
+    // console.log("finally?", shape);
 
     const fileContents = await shape.render();
-    console.log(typeof fileContents);
+    // console.log(typeof fileContents);
 
     await writeFile("./examples/logo.svg", fileContents);
     console.log("Generated logo.svg");
