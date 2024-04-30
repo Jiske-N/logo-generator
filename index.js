@@ -1,14 +1,37 @@
+// const { writeFile } = require("fs/promises");
+// const getData = require("./lib/returnData.js");
+// const generateShape = require("./lib/returnSVG.js");
+
+// const main = async () => {
+//   try {
+//     const { chars, color, bgColor, structure } = await getData();
+
+//     const shape = await generateShape(chars, color, bgColor, structure);
+
+//     const fileContents = shape.render();
+
+//     await writeFile("./examples/logo.svg", fileContents);
+//     console.log("Generated logo.svg");
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// main();
+
 const { writeFile } = require("fs/promises");
 const getData = require("./lib/returnData.js");
-const generateShape = require("./lib/returnSVG.js");
+const sVG = require("./lib/returnSVG.js");
 
 const main = async () => {
   try {
-    const { chars, color, bgColor, structure } = await getData;
+    const { chars, color, bgColor, structure } = await getData();
 
-    const shape = await generateShape(chars, color, bgColor, structure);
+    // const shape = await generateShape(chars, color, bgColor, structure);
 
-    const fileContents = shape.render();
+    const fileContents = await sVG(chars, color, bgColor, structure);
+    console.log(fileContents);
+    console.log(typeof fileContents);
 
     await writeFile("./examples/logo.svg", fileContents);
     console.log("Generated logo.svg");
