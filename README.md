@@ -38,7 +38,7 @@ Following on from installation all you need to do to use the generator is:
 - Open the file in browser to view.
 - Move the logo to the relevant folder of the required repository or any other destination you wish.
 
-[Or follow this video tutorial]()
+[Or follow this video tutorial](https://watch.screencastify.com/v/wgK0XEKfTv2LRpUSCeBc)
 
 ## Future Development
 
