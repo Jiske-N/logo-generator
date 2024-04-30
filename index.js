@@ -19,7 +19,3 @@ const main = async () => {
 };
 
 main();
-
-// the way I completed the project is not the way I would actually go about it in terms of efficiency.
-// apologies for the massive number of files linking to one another I was practicing tracking how data moves between files.
-// a far more concise way to provide the same functionality (but not pass the tests) would be:
